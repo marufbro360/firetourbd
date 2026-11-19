@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Admin Panel - RH E-SPORTS</title>
+    <title>Admin Panel - FIRE TOUR BD</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-material-ui/material-ui.min.css" rel="stylesheet">
@@ -335,7 +335,7 @@
 
         <div class="flat-card">
             <h4 style="margin-bottom:16px; color:var(--primary); font-weight:800;">General Info</h4>
-            <div class="form-group"><label class="form-label">App Name</label><input type="text" id="set-app-name" class="form-input" placeholder="RH E-SPORTS"></div>
+            <div class="form-group"><label class="form-label">App Name</label><input type="text" id="set-app-name" class="form-input" placeholder="FIRE TOUR BD"></div>
             <div class="form-group"><label class="form-label">Logo URL</label><input type="text" id="set-app-logo" class="form-input" placeholder="https://..."></div>
             <div class="form-group"><label class="form-label">Marquee Notice</label><textarea id="set-notice" class="form-input" rows="2"></textarea></div>
             <div class="form-group"><label class="form-label">Startup Popup Text</label><textarea id="set-popup" class="form-input" rows="3"></textarea></div>
@@ -397,15 +397,14 @@
         import { getDatabase, ref, set, onValue, push, update, remove, get } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyBwzagglp3IC5NO6e2lClhOEp1ahIYNyDE",
-            authDomain: "rh-esports-1f458.firebaseapp.com",
-            databaseURL: "https://rh-esports-1f458-default-rtdb.firebaseio.com",
-            projectId: "rh-esports-1f458",
-            storageBucket: "rh-esports-1f458.firebasestorage.app",
-            messagingSenderId: "476083440994",
-            appId: "1:476083440994:web:f9558ecd8bbdbce183f03b",
-            measurementId: "G-TGZ58H7FN2"
-        };
+  apiKey: "AIzaSyCXRrP-ttu9Hot4KXVihrWVOzCzOaHeNdo",
+  authDomain: "fire-tour-bd1.firebaseapp.com",
+  projectId: "fire-tour-bd1",
+  storageBucket: "fire-tour-bd1.firebasestorage.app",
+  messagingSenderId: "988043793450",
+  appId: "1:988043793450:web:61c47f3115a13a269e1f53",
+  measurementId: "G-BB1D1FFN1N"
+};
 
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
@@ -836,6 +835,12 @@
             if(!title || !body) return Swal.fire('Error', 'Fill all fields', 'error');
             push(ref(db, 'notifications'), { title, body, time: new Date().toLocaleString() });
             Swal.fire({icon: 'success', title: 'Sent!', timer: 1500, showConfirmButton: false});
+            document.getElementById('notif-title').value = "";
+            document.getElementById('notif-body').value = "";
+        };
+    </script>
+</body>
+</html>
             document.getElementById('notif-title').value = "";
             document.getElementById('notif-body').value = "";
         };
